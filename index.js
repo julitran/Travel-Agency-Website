@@ -113,16 +113,4 @@ app.use(function(req, res){
   res.status(404).render("404page.ejs", {title:"404 error"});
 });
 
-//find one customer from the database
-MongoClient.connect(url, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true
-}, function(err, db) {
-  if (err) {throw err;}
-  let customerDatabase = db.db('travelexperts')
-  customerDatabase.collection('customers').findOne({}, function(err, result) {
-    if (err) {throw err;}
-    console.log(result)
-    db.close()
-  })
-});
+
