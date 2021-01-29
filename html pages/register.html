@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title>Registration Page</title>
+		<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+		<link rel="stylesheet" type="text/css" href ="style.css"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<script type ="text/javascript">
+			function displayconfirmmsg()
+			{
+				alert("Are you sure you want to submit?")
+			}
+			function displayresetmsg()
+			{
+				alert("Are you sure you want to reset?")
+			}
+			function checkpcode()
+			{
+				var regEx= /^[A-Z]\d[A-Z] ?\d[A-Z]\d$/;
+				var match = document.getElementById("pcode");
+				if (regEx.test(match.value))
+				{
+					alert(pcode.value)
+				}
+				else
+				{
+					alert("Reenter the postal code (A1A 1A1)");
+				}
+			}
+
+		</script>
+	</head>
+	<body>
+		<nav>
+			<a href = "file:///C:/xampp/htdocs/webdev/index.html"> Main</a>&nbsp;&nbsp;&nbsp;
+			<a href="file:///C:/xampp/htdocs/webdev/register.html"> Registration Page
+			</a>&nbsp;&nbsp;&nbsp;
+			<a> Package </a> &nbsp;&nbsp;&nbsp;
+			<a> Flight </a> &nbsp;&nbsp;&nbsp;
+			<a> Hotel </a>&nbsp;&nbsp;&nbsp;
+			<a href="file:///C:/xampp/htdocs/webdev/contact.html"> Contact Us
+			</a>
+		</nav>
+
+		<div class="banner">
+			<h1><i class="far fa-paper-plane"></i>&nbsp;TRAVEL EXPERTS</h1>
+		</div>
+
+		<header class="onverytop">
+			Welcome to your next travel designation.
+		</header>
+
+		<br>
+		Thank you for your interest in Travel Experts, please fill out your information below.<br><br>
+		<form method="POST" action="bouncer.php">
+		<div class = "form">
+			<b>Customer Information:</b><br><br>
+			<!-- Customer Name-->
+
+			<label for="fname" >First Name</label>
+			<input id="fname" type="text">
+				<span> Enter your first name</span>
+			</input> &nbsp;&nbsp;
+
+			<label for ="lname">Last Name</label>
+			<input  id="lname" type="text">
+				<span> Enter your last name </span>
+			</input><br><br>
+
+			<!--Customer Birthdate-->
+			<label for ="bday">Birth date</label>
+			<input id="bday" type="date"  name="lname" >
+				<span> Enter your date of birth </span>
+			</input> <br><br>
+
+			<!--Address Info-->
+			<label for ="address">Address</label>
+			<input id="address" type="text"  name="address">
+				<span> Enter your address </span>
+			</input><br><br>
+
+			<label for ="city">City</label>
+			<input id="city" type="text"  name="city" >
+				<span> Enter the name of your city</span>
+			</input><br><br>
+
+			<label for="pcode"> Postal Code</label>
+			<input id="pcode" type ="text" onfocusout="checkpcode()" >
+				<span> Enter your postal code A1A 1A1</span>
+			</input><br><br>
+
+			<label for ="prov">Select your province</label>
+			<select name="prov">
+				<option value="BC"> British Columbia </option>
+				<option value="AB"> Alberta </option>
+				<option value="SK"> Saskatchewan </option>
+				<option value="MB"> Manitoba </option>
+				<option value="ON"> Ontario </option>
+				<option value="QC"> Quebec </option>
+				<option value="NB"> New Brunswick</option>
+				<option value="NL"> Newfoundland and Labrador </option>
+				<option value="NS"> Nova Scotia </option>
+				<option value="PE"> Prince Edward Island </option>
+				<option value="NU"> Nunavut </option>
+				<option value="NT"> Northwest Territories </option>
+			</select><br><br>
+
+			<!--Contact Information-->
+			<label for ="pnumber">Phone Number</label>
+			<input id="pnumber" type="phone"  name="pnumber">
+				<span> Enter your phone number (123-456-7890)</span>
+			</input><br><br>
+
+			<label for ="email">Email</label>
+			<input id="email" type="text" >
+				<span> Enter your email address (email@domain.com)</span>
+			</input><br><br>
+
+			<!-- Travel Information-->
+			<label for ="desination">Where are you travelling to?</label>
+			<select name="desination">
+				<option value="VN"> Vancouver</option>
+				<option value="SF"> San Francisco</option>
+				<option value="NY"> New York</option>
+				<option value="JP"> Japan</option>
+				<option value="IT"> Italy</option>
+				<option value="FR"> France</option>
+			</select><br><br>
+
+			<label for ="datetravel">Date of Travel</label>
+			<input id="datetravel" type="date">
+				<span> Choose the date of your travel</span>
+			</input> &nbsp; &nbsp;
+
+			<label for ="datereturn">Date of Return</label>
+			<input id="dateturn" type="date">
+					<span> Choose the date of your return</span>
+			</input><br><br>
+
+			How many...<br><br>
+			<label for = "numadults">Adults </label>
+			<input id="numadults" type="number" max=10 min=0>
+				<span> Enter the number of adults going on this trip (18+)</span>
+			</input>&nbsp;&nbsp;
+
+			<label for = "numchild"> Children</label>
+			<input id="numchild" type="number" max=10 min=0>
+				<span> Enter the number of children going on this trip (Under the age of 18)</span>
+			</input><br><br
+		</div>
+		<br><br>
+
+		<b>Card Information</b> <br><br>
+		<div>
+			<label for = "namcard">Name on card</label>
+			<input id="namcard" type="text" >
+				<span> Enter the full name of the cardholder</span>
+			</input><br><br>
+
+			<label for = "cardnum"> Card Number </label>
+			<input id="cardnum" type="text" >
+				<span> Enter the 16 digits on your credit card (no spaces)</span>
+			</input><br><br>
+
+			<label for = "expdate"> Expiry date</label>
+			<input id="expdate" type="number" max=10 min=0>
+				<span> Enter the expiration date of your card</span>
+			</input><br><br>
+
+			<label for = "cvc"> CVC </label>
+			<input id="cvc" type="number" size=3>
+				<span> Enter the three digit CVC number on the back of </span>
+			</input><br><br>
+		</div>
+
+		<input type="submit" onclick="displayconfirmmsg()"></input>
+		<input type="reset" value ="Reset Form" onclick="displayresetmsg()"></input>
+
+
+		</form>
+
+	</body>
+
+</html>)

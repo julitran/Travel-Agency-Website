@@ -1,0 +1,64 @@
+<!-- This is the main page of Travel Experts webpage -->
+
+  <!--Import header from partials folder-->
+  <%- include("partials/header") %>
+  <body>
+		<nav class="nav2">
+				<div id="greeting"></div>
+				Welcome to your next travel designation.
+		</nav>
+
+  <!--Create arrays for travel photos, travel links and description of the travel designation -->
+  <!--All photos are personal travel photos -->
+  <script>
+		var travelpic = ["./public/IMG-4802.jpg", "./public/IMG-4912.jpg", "./public/IMG-5132.jpg" ,"./public/IMG-4429.jpg", "./public/IMG-4578.jpg","./public/IMG-4774.jpg"];
+    var traveldes = new Array();
+		traveldes[0] = ["Feel the brisk San Francisco breeze and California palm trees"];
+		traveldes[1] = ["Come see the winding roads of Lombard Street or tdriving down these winding these roads."];
+		traveldes[2] = ["Check out the Palace of Fine Arts"];
+		traveldes[3] = ["Take a walk around the Ferry Building for some delicious foods"];
+		traveldes[4] = ["Walk across the legendary Golden Gate Bridge"];
+		traveldes[5] = ["Walk around Mission Distict to catch a glimpse of San Francisco's colourful murals"];
+
+    <!-- When photos are clicked, the following websites will open-->
+    var travellink = new Array();
+		travellink[0] = ["https://www.sftravel.com/"];
+		travellink[1] = ["https://www.sftravel.com/article/sf-icons-lombard-street"];
+		travellink[2] = ["https://www.ferrybuildingmarketplace.com/"];
+		travellink[3] = ["https://www.ferrybuildingmarketplace.com/"];
+		travellink[4] = ["https://www.goldengate.org"];
+		travellink[5] = ["https://www.sftravel.com/article/guide-san-francisco%E2%80%99s-mission-district-murals"];
+  </script>
+
+  <!-- openNewWindow function will open a new window to a specific link for 4 seconds -->
+  <script>
+		function openNewWindow(index){
+			var myWindow = window.open(travellink[index], '','width=300, height=300');
+			setTimeout(function(){myWindow.close()}, 3000);
+		}
+	</script>
+
+  <!-- creates a table that displays travel images and description of the image -->
+  <div class=homePage>
+  <br>
+  	<table>
+  		<script>
+  			for (i=0; i<travelpic.length; ++i)
+  			{
+  				document.write("<tr><td><a onclick= 'openNewWindow(" + i + ")' href=' ' target='popup' onclick='window.open('" + travellink[i] + "', 'width=600, height=400')><img src='" + travelpic[i] + "'></a> </td>");
+  				document.write("<td>" + traveldes[i] + "</td></tr>");
+  			}
+  		</script>
+  	</table>
+  <br>
+  </div>
+
+  <!-- to show a different greeting when homepage loads -->
+	<script type="module">
+		import greeting from './randomGreeting.js';
+		let greetingInsert = document.getElementById("greeting")
+		greetingInsert.innerHTML = greeting();
+	</script>
+
+  <!--Import footer from partials folder-->
+  <%- include("partials/footer") %>

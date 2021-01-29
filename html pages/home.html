@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+	<title>Home</title>
+	<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href ="style.css"/>
+	<script>
+		var traveldes = new Array();
+		var travellink = new Array();
+		var travelpic = ["IMG-4802.jpg", "IMG-4912.jpg", "IMG-5132.jpg" ,"IMG-4429.jpg", "IMG-4578.jpg","IMG-4774.jpg"];
+		traveldes[0] = ["Feel the brisk San Fransico air"];
+		traveldes[1] = ["Come see the winding roads of Lombard Street"];
+		traveldes[2] = ["Check out the Palace of Fine Arts"];
+		traveldes[3] = ["Take a walk around the Ferry Building for some delicious foods "];
+		traveldes[4] = ["Walk across the legendary Golden Gate Bridge"];
+		traveldes[5] = ["Walk around Mission Distict to catch a glimpse of the colourful murals"];
+
+		travellink[0] = ["https://www.sftravel.com/"];
+		travellink[1] = ["https://www.sftravel.com/article/sf-icons-lombard-street"];
+		travellink[2] = ["https://www.ferrybuildingmarketplace.com/"];
+		travellink[3] = ["https://www.ferrybuildingmarketplace.com/"];
+		travellink[4] = ["https://www.goldengate.org"];
+		travellink[5] = ["https://www.sftravel.com/article/guide-san-francisco%E2%80%99s-mission-district-murals"];
+
+		function openNewWindow(index){
+			var myWindow = window.open(travellink[index], '','width=300, height=300');
+			setTimeout(function(){myWindow.close()}, 3000);
+		}
+	</script>
+
+<body>
+	<nav>
+		<a href = "file:///C:/xampp/htdocs/webdev/index.html"> Main</a>&nbsp;&nbsp;&nbsp;
+		<a href="file:///C:/xampp/htdocs/webdev/register.html"> Registration Page
+		</a>&nbsp;&nbsp;&nbsp;
+		<a> Package </a> &nbsp;&nbsp;&nbsp;
+		<a> Flight </a> &nbsp;&nbsp;&nbsp;
+		<a> Hotel </a>&nbsp;&nbsp;&nbsp;
+		<a href="file:///C:/xampp/htdocs/webdev/contact.html"> Contact Us
+		</a>
+	</nav>
+
+	<div class="banner">
+		<h1><i class="far fa-paper-plane"></i>&nbsp;TRAVEL EXPERTS</h1>
+	</div>
+
+	<header class="onverytop">
+		Welcome to your next travel designation.
+	</header>
+	<br><br>
+
+	<table>
+		<script>
+			for (i=0; i<travelpic.length; ++i)
+			{
+				document.write("<tr><td><a onclick= 'openNewWindow(" + i + ")' href=' ' target='popup' onclick='window.open('" + travellink[i] + "', 'width=600, height=400')><img src='" + travelpic[i] + "'></a> </td>");
+				document.write("<td>" + traveldes[i] + "</td></tr>");
+			}
+		</script>
+	</table>
+
+	<footer>
+		<p> Call us at 403-123-4567 <br>
+		This page is Copright &copy; by Julie</p>
+	</footer>
+</body>
+
+</html>

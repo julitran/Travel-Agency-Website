@@ -1,0 +1,29 @@
+<!-- After customer submits registration information, it redirects customer to this page-->
+
+<!-- Import header from partials-->
+<%- include("partials/header") %>
+<body>
+		<br>
+	<!-- Personalize message to the customer and redirecting the customer back to the homepage-->
+	<div class="thankYouPage">
+		<p> Thank you <b><%- custContact.custFirstName %></b>, for your question </p>
+	  <p> Our travel agents will contact you in 1-2 business days</p>
+		<h3><a id="returnHome" href="http://localhost:8000/"> Click here to return to the first page</a></h3>
+	</div>
+	<br>
+	<!-- Shows the customer the message that they sent to the travel agents-->
+	<div class=border>
+		<p><b>The following is what your inquiry looks like</b></p>
+		<p><b>Your name is:</b><br><%- custContact.custFirstName %> &nbsp; <%-custContact.custLastName %> </p>
+		<p><b>Your contact information is</b><br><%- custContact.custPhone %> or <%- custContact.custEmail %> </p>
+		<p><b>Your inquires are...</b></p><br>
+		<p> <%- custContact.custComment %>
+	</div>
+
+	<br>
+	<br>
+	<br>
+
+</body>
+<!-- Import footer from partials-->
+<%- include("partials/footer") %>

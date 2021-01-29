@@ -1,0 +1,147 @@
+<!-- This is the main page of Travel Experts webpage -->
+
+  <!--Import header from partials folder-->
+	<%- include("partials/header") %>
+
+	<body>
+		<br>
+		<!--Displaying today's day of the week, month, date and year -->
+		<script>
+			var month = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+			var dayofweek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+			var date = new Date();
+			var y = date.getFullYear();
+			var m = month[date.getMonth()];
+			var day = dayofweek[date.getDay()];
+			var d = date.getDate();
+		</script>
+
+		<br>
+		<br>
+
+		<!--Asking customer to register for an account -->
+		<!--Instructions on how to input the information/additional description is shown after clicking on the form inputs-->
+		<!-- All form inputs are required except for credit card information -->
+		<h1 class = contactInfo>Create a account</h1><br>
+		<p style="text-align:center;font-size:20px"><script>document.write("Today is " + day + " " + m + " " + d + " " + y + ". Your next adventure is a click away.")</script></p>
+		<form id="registerForm" action="/create-new-customer" method="post">
+		<div class = "form">
+			<!-- Retrieve customer information from customer-->
+			<b>Customer Information:</b><br><br>
+			<!-- Customer Name-->
+			<label for="fname" >First Name</label> <br>
+			<input id="fname" name="fname" type="text" required/>
+			<span> Enter your first name</span> <br><br>
+
+			<label for ="lname">Last Name</label> <br>
+			<input  id="lname" name="lname" type="text" required/>
+			<span> Enter your last name </span><br><br>
+
+			<!--Customer Birthdate-->
+			<label for ="bday">Birth date</label> <br>
+			<input id="bday"  name="bday" type="date" required/>
+			<span> Enter your date of birth </span><br><br>
+
+			<!--Address Info-->
+			<label for ="address">Address</label> <br>
+			<input id="address" type="text" name="address" required/>
+			<span> Enter your address </span><br><br>
+
+
+			<label for ="city">City</label> <br>
+			<input id="city" type="text"  name="city" required/>
+			<span> Enter the name of your city</span><br><br>
+
+			<label for="pcode"> Postal Code</label> <br>
+			<input id="pcode" name="pcode" type ="text" onfocusout="checkpcode()" required />
+			<span> Enter your postal code A1A 1A1</span><br><br>
+
+			<label for ="prov">Select your province</label> <br>
+			<select name="prov" required>
+				<option value="BC"> British Columbia </option>
+				<option value="AB"> Alberta </option>
+				<option value="SK"> Saskatchewan </option>
+				<option value="MB"> Manitoba </option>
+				<option value="ON"> Ontario </option>
+				<option value="QC"> Quebec </option>
+				<option value="NB"> New Brunswick</option>
+				<option value="NL"> Newfoundland and Labrador </option>
+				<option value="NS"> Nova Scotia </option>
+				<option value="PE"> Prince Edward Island </option>
+				<option value="NU"> Nunavut </option>
+				<option value="NT"> Northwest Territories </option>
+			</select><br><br>
+
+			<!--Contact Information-->
+			<label for ="pnumber">Phone Number</label> <br>
+			<input id="pnumber" type="number" name="pnumber" required/>
+			<span> Enter your phone number (123-456-7890)</span><br><br>
+
+			<label for ="email">Email</label> <br>
+			<input id="email" name="email" type="text" required />
+			<span> Enter your email address (email@domain.com)</span><br><br>
+
+		<!-- Retrieve card information from customer-->
+		<b>Card Information</b>
+		<p>You may choose to skip this part if you'd like to input your credit card information when you purchase a vacation package</p>
+			<label for = "namcard">Name on card</label> <br>
+			<input id="namcard" name="namcard" type="text" />
+			<span> Enter the full name of the cardholder</span><br><br>
+
+			<label for = "cardnum"> Card Number </label> <br>
+			<input id="cardnum" name="cardnum" type="number"/>
+			<span> Enter the 16 digits on your credit card (no spaces)</span><br><br>
+
+			<label for = "expdate"> Expiry date</label> <br>
+			<input id="expdate" name="expdate" type="date"/>
+			<span> Enter the expiration date of your card</span><br><br>
+
+			<label for = "cvc"> CVC </label> <br>
+			<input id="cvc" name= "cvc" type="text" pattern="\d*" maxlength="3" />
+			<span> Enter the three digit CVC number on the back of </span><br><br>
+
+			<input type="submit" onclick="return displayconfirmmsg()"></input>
+			<input type="button" value ="Reset Form" onclick="displayresetmsg()"></input>
+		</div>
+		</form>
+	</body>
+	<script type ="text/javascript">
+		//confirmation after clicking on the submit button//
+		function displayconfirmmsg()
+		{
+			var submitButton = confirm("Are you sure you want to submit?")
+			if (submitButton === false)
+				return false;
+		}
+
+		//confirmation after clicking on the reset button//
+		function displayresetmsg()
+		{
+			var resetButton = confirm("Are you sure you want to reset?")
+			if (resetButton === true) {
+					var form = document.getElementById("registerForm")
+					form.reset();
+			} else {
+				return false;
+			}
+		}
+
+		//Using regular expression to check if the customer has input the postal code accurately//
+		function checkpcode()
+		{
+			var regEx= /^[A-Z]\d[A-Z] ?\d[A-Z]\d$/;
+			var match = document.getElementById("pcode");
+			if (regEx.test(match.value))
+			{
+				return
+			}
+			else
+			{
+				alert("Reenter the postal code (A1A 1A1)");
+			}
+		}
+	</script>
+
+
+<!--Import footer from partials folder-->
+<%- include('partials/footer') %>

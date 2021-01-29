@@ -1,0 +1,235 @@
+/* This is the cascading styling page for Travel Experts Webpage */
+
+/*Generic styling for any text in the body, allowing all text to be consistent unless otherwised styled */
+body{
+	font-family:Century Gothic;
+	font-size:18px;
+}
+
+/*Styling for the header*/
+/*Including header and navigation bar */
+
+h1{
+	color:white;
+	font-weight: bolder;
+	text-align: center;
+	margin:0px;
+	padding:0px;
+}
+
+.banner{
+	background-color:#817FAE;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-blend-mode: lighten;
+	margin: 0;
+	padding:70px 0;
+	border: 10px, solid, white;
+	color:white;
+	font-size: 3vw;
+	font-weight: bolder;
+	text-align: center;
+}
+
+.navigation{
+	padding: 10px;
+	background:#white;
+	color:#817FAE;
+	font-size:17px;
+	margin: 2px;
+}
+nav ul{
+	margin:0px;
+	padding:0px;
+}
+nav li{
+	display:inline-block;
+	margin-right: 10px;
+	margin-left: 10px;
+	margin-top: 1px;
+	margin-bottom: 1px;
+}
+
+nav a {
+  text-decoration: none;
+	color:#817FAE;
+	cursor:pointer;
+}
+
+a:visited {
+  color:#817FAE;
+}
+
+/*styling for the main page which generates a new greeting everytime that page is revisited/refreshed*/
+.nav2{
+	padding: 10px;
+	background:white;
+	color:#817FAE;;
+	font-size:14px;
+	margin: 2px;
+	text-align: center;
+}
+
+#greeting{
+	font-size: 25px;
+}
+
+/*Styling for the table on the main page to display travel information */
+table{
+	margin-left: auto;
+	margin-right: auto;
+	padding: 10px;
+	width: 80%;
+	border-collapse: collapse;
+	border-radius:3px;
+	border-spacing: 10px;
+	text-align: center;
+	background-color:white;
+}
+
+table, tr, td{
+	border: 2px solid #817FAE;
+}
+
+img:hover {
+	opacity: 0.4;
+	cursor: pointer;
+}
+
+img {
+	width:200px;
+	height: 250px;
+}
+
+/*background image for the home page */
+.homePage{
+	background-image: url('IMG-4802.jpg');
+	background-repeat:no-repeat;
+	background-size:cover;
+	background-blend-mode: lighten;
+}
+
+/* All form styling, including registration page and contact us page.*/
+/* Styled the submit and reset buttons */
+/* Styled the input forms fields*/
+/* Tool tip onclick form fields */
+span{
+display: none;
+background-color:#3E4441;
+color:white;
+border-radius: 5px;
+padding: 5px;
+font-size: 10px;
+}
+
+input:focus + span{
+display: inline;
+position: absolute;
+}
+
+.form{
+	padding: 20px;
+	margin: 0 auto;
+	padding: 50px;
+	width: 90%;
+	border:1px solid #817FAE;
+	border-radius: 3px;
+	text-align:left;
+}
+
+
+input[type=text],[type=number], select {
+  width: 90%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=button], input[type=submit],input[type=date], input[type=reset] {
+	background-color:#817FAE;
+	border: 2px solid;
+	border-radius: 5px;
+	color: white;
+	padding: 10px 10px;
+	font-family: Century Gothic;
+	margin: 4px 2px;
+	cursor: pointer;
+}
+
+textarea {
+  width: 90%;
+	padding: 12px 20px;
+	margin: 8px 0;
+	display: inline-block;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	box-sizing: border-box;
+}
+
+/*Styling for redirect page after registering for an account and submitting contact information page*/
+.thankYouPage{
+	text-align: center;
+	font-size: 20px;
+}
+
+.border{
+	border:1px solid #817FAE;
+	border-radius:3px;
+	text-align: center;
+	font-size: 15px;
+	width: 90%;
+	margin: 0 auto;
+}
+
+/*Styling the contact page */
+.contactForm{
+	text-align:center;
+}
+.contactInfo{
+	color: #817FAE;
+	font-size: 30px;
+}
+
+.contactPage{
+	text-align:center;
+}
+
+.contactP{
+	font-size:20px;
+}
+h3{
+	text-align:center;
+}
+
+/*Styling for the 404 page and the link to return back to home page */
+.oops {
+	color: #817FAE;
+	font-size: 80px;
+}
+
+#returnHome{
+  text-decoration: none;
+	color: #817FAE;
+	cursor:pointer;
+	text-align: center;
+}
+
+/*styling the footer */
+footer{
+	font-size:12px;
+	padding:10px;
+	margin:5px;
+	font-family:Century Gothic;
+	color:white;
+	text-align:center;
+	background-color:#817FAE;
+	}
+
+/*styling the hr tag */
+hr {
+	border:1px solid #817FAE ;
+	width:80%;
+	}

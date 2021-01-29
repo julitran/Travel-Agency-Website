@@ -1,0 +1,113 @@
+<!-- Contact page for Travel Experts Website-->
+
+<!-- Import header from partials-->
+<%- include("partials/header") %>
+	</br>
+	</br>
+	<h1 class = contactInfo>Let's get connected</h1><br>
+
+	<!--Contact form for customers to ask questions directly on the webpage -->
+	<div class="contactForm">
+		<form id="contactForm" action="/sendContactForm" method="post">
+			<label for = "custFirstName">First Name</label><br>
+			<input id="custFirstName" name="custFirstName" type="text" required/>
+			<span> Enter your first name</span><br><br>
+
+			<label for = "custLastName">Last Name</label><br>
+			<input id="custLastName" name="custLastName" type="text" required />
+			<span> Enter your last name</span><br><br>
+
+			<label for = "custPhone"> Phone Number </label><br>
+			<input id="custPhone" name="custPhone" type="number" required/>
+			<span> Enter your phone number (123-456-7890)</span><br><br>
+
+			<label for = "custEmail"> Email </label><br>
+			<input id="custEmail" name= "custEmail" type="text" required/>
+			<span> Enter your email</span><br><br>
+
+			<label for = "custComment"> Enter your question or comment here </label><br>
+			<textarea id="custComment" name= "custComment" rows="4" cols="50" style="font-family:Century Gothic"required> </textarea><br>
+
+			<input type="submit"  onclick="return displayconfirmmsg()"></input>
+			<input type="button" value ="Reset Form" onclick="displayresetmsg()"></input>
+		</form>
+	</div>
+	<br>
+	<hr>
+	<br>
+
+	<!--Travel agencies contact information separated into Calgary and Okotoks travel agencies -->
+	<!-- Calgary branch -->
+	<div class=contactPage>
+	<p class=contactP> Find us in Calgary </p>
+	<ul style="list-style-type: none; display: inline-block;">
+		<li><b>Travel Experts</b></li>
+		<li><i>Calgary Branch</i></li>
+		<li> 6473 8 Street SE </li>
+		<li> T7H 2J0 Calgary, AB  </li>
+	</ul>
+
+	<ul style="list-style-type: none; display: inline-block;">
+		 <li><b>Johny Rose</b></li>
+		 <li>Phone Number: 403-758-5685 </li>
+		 <li>Email: johnny@travelexperts.ca </li>
+	</ul>
+
+	<ul style="list-style-type: none; display: inline-block;">
+	 <li><b>Moira Rose</b></li>
+	 <li>Phone Number: 403-545-8759</li>
+	 <li>Email: moira@travelexperts.ca </li>
+	</ul>
+
+	<br>
+	<br>
+
+	<!-- Okotoks branch -->
+	<p class=contactP> Find us in Okotoks </p>
+	<ul style="list-style-type: none; display: inline-block;">
+		<li><b>Travel Experts</b></li>
+		<li><i>Okotoks Branch</i></li>
+		<li> 4864 1 Ave N </li>
+		<li> T8H 2J6 Okotoks, AB  </li>
+	</ul>
+
+	<ul style="list-style-type: none; display: inline-block;">
+	 <li><b>David Rose</b></li>
+	 <li>Phone Number: 403-545-8489</li>
+	 <li>Email: david@travelexperts.ca </li>
+	</ul>
+
+	<ul style="list-style-type: none; display: inline-block;">
+	 <li><b>Alexis Rose </b></li>
+	 <li>Phone Number: 403-545-8483</li>
+	 <li>Email: alexis@travelexperts.ca </li>
+	</ul>
+</div>
+<br>
+<br>
+</body>
+
+<script type ="text/javascript">
+	//confirmation after clicking on the submit button//
+	function displayconfirmmsg()
+	{
+		var submitButton = confirm("Are you sure you want to submit?")
+		if (submitButton === false){
+			return false;
+		}
+	}
+
+	//confirmation after clicking on the reset button//
+	function displayresetmsg()
+	{
+		var resetButton = confirm("Are you sure you want to reset?")
+		if (resetButton === true) {
+			var form = document.getElementById("contactForm")
+			form.reset();
+		} else {
+			return false;
+		}
+	}
+</script>
+<!-- Import footer from partials-->
+<%- include("partials/footer") %>

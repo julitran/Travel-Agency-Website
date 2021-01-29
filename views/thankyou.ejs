@@ -1,0 +1,20 @@
+<!-- After customer submits registration information, it redirects customer to this page-->
+
+<!-- Import header from partials-->
+<%- include("partials/header") %>
+<body>
+		<br>
+	<div class="thankYouPage">
+		<!-- Personalize message to the customer and redirecting the customer back to the homepage-->
+		<p> Thank you <b><%- cust.fname %></b> for choosing Travel Experts </p>
+	  <p> A confirmation email and temporary password will be sent to <b><%-cust.email%></b> shortly.</p>
+		<h3><a id="returnHome" href="http://localhost:8000/"> Click here to return to the first page</a></h3>
+		<br>
+		<br>
+		<br>
+
+	</div>
+
+</body>
+<!-- Import footer from partials-->
+<%- include("partials/footer") %>
